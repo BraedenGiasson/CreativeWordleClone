@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 0.75em;
+    border-bottom: 1px solid #3a3a3c;
+}
+
+#wordle_title {
+    font-family: "nyt-karnakcondensed";
+    font-weight: 700 !important;
+    /* flex-grow: 2; */
+    font-size: 36px;
+    letter-spacing: .01em;
+    text-align: center;
+    margin: 0;
+}
