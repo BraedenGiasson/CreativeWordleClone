@@ -1,0 +1,13 @@
+#tile {
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    line-height: 1;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: #3A3A3C !important;
+    text-transform: uppercase;
+}
