@@ -25,4 +25,5 @@ body {
 #main_section {
   display: flex;
   justify-content: center;
+  padding: 1.5em 0;
 }

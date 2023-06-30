@@ -16,8 +16,10 @@ function App() {
       <Navbar/>
 
       <div id='main_section'>
-        <Grid container spacing={1} direction={'row'} className='board'>
-          {/* <Grid container direction={'row'}>
+        <Grid container spacing={1} direction={'column'} className='board'>
+          {[...Array(board.rows)].map((_, index) => (
+            <Grid key={crypto.randomUUID()} container spacing={1} direction={'row'} className='board'>
+              {/* <Grid container direction={'row'}>
             <Grid item xs={2}>
               <Tile value={"a"} />
             </Grid>
@@ -38,11 +40,14 @@ function App() {
             </Grid>
           </Grid> */}
 
-          {[...Array(board.rows)].map((_, index) => (
-            <Grid item xs={2}
+              {[...Array(board.columns)].map((_, index) => (
+                <Grid key={crypto.randomUUID()}
+                  item xs={2}
                   direction={'row'}>
-              <Tile value={"b"}/>
-              </Grid> 
+                  <Tile value={""} />
+                </Grid>
+              ))}
+            </Grid>
           ))}
         </Grid>
       </div>
