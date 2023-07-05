@@ -1,0 +1,25 @@
+#settings_gear:hover {
+    background: none !important;
+}
+
+#settings-title {
+    text-align: center;
+    font-size: 25px;
+}
+
+#dialog-window {
+   color: #121213; 
+}
+
+.dialog-section-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#settings-dialog-box {
+    width: 500px;
+}
+
+.section-item-name {
+    font-weight: bold;
+}
