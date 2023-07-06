@@ -16,7 +16,9 @@ import Slide from '@mui/material/Slide';
 import { Modal } from '@mui/base';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import zIndex from '@mui/material/styles/zIndex';
-import { correctGuess } from '/src/utils/Preferences'
+import Preferences from '../../../utils/updatePreferences';
+import { PreferenceName } from '../../../utils/preferenceName';
+import { Preference } from '../../../utils/preference';
 
 
 export default function ColorButton({ color }) {
@@ -32,6 +34,8 @@ export default function ColorButton({ color }) {
         setNewColor(state);
         console.log(state);
         setOpen(false);
+
+        Preferences.setColorPreference(PreferenceName.new, state)
     }
 
     const handleOpen = () => {

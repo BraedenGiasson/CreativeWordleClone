@@ -17,10 +17,10 @@ import Switch from '@mui/material/Switch';
 import Slide from '@mui/material/Slide';
 import ColorPicker from './ColorPicker/ColorPicker';
 import ColorButton from './ColorButton/ColorButtonModal';
-import { correctGuess,
-         incorrectGuess
-} from '/src/utils/Preferences'
 import { auto } from '@popperjs/core';
+import { Preference } from '../../utils/preference';
+import Preferences from '../../utils/updatePreferences';
+import { PreferenceName } from '../../utils/preferenceName';
 
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -107,7 +107,28 @@ export default function MaxWidthDialog() {
 
             <div className='setting-section'>
 
-                <ColorButton color={correctGuess}/>
+                <ColorButton color={Preference.CorrectGuess}/>
+            </div>
+          </Box>
+
+          <Box
+            noValidate
+            component="div"
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+            //   m: 'auto',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <InputLabel className='section-item-name'>
+            Incorrect Guess
+            </InputLabel>
+
+            <div className='setting-section'>
+
+                <ColorButton color={Preferences.getColorPreference(PreferenceName.new) ?? Preference.new}/>
             </div>
           </Box>
         </DialogContent>
