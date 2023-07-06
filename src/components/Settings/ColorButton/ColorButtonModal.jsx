@@ -42,7 +42,6 @@ export default function ColorButton({ color }) {
       setOpen(true);
     };
     const handleClose = () => {
-      console.log(state);
       setOpen(false);
     };
   
