@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import { Navbar } from './components/Navbar/Navbar'
 import Grid from '@mui/material/Unstable_Grid2'
 import { Tile } from './components/Board/Tile/Tile'

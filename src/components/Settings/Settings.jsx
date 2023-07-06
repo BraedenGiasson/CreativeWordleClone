@@ -66,71 +66,121 @@ export default function MaxWidthDialog() {
         TransitionComponent={Transition}
       >
         <DialogTitle id='settings-title'>Settings</DialogTitle>
+
         <DialogContent>
-          <DialogContentText className='dialog-section-title'>
-            Theme
-          </DialogContentText>
-          <Box
-            noValidate
-            component="switch"
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-            //   m: 'auto',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <InputLabel className='section-item-name'>
-            Dark Theme
-            </InputLabel>
-            <Switch checked={fullWidth} onChange={handleFullWidthChange} />
-          </Box>
+          <div className='settings-section'>
+            <DialogContentText className='dialog-section-title'>
+                Theme
+            </DialogContentText>
+            
+            <Box
+                className='settings-item-row'
+                noValidate
+                component="switch"
+                sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                //   m: 'auto',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                }}
+            >
+                <InputLabel className='section-item-name'>
+                Dark Theme
+                </InputLabel>
+                <Switch checked={fullWidth} onChange={handleFullWidthChange} />
+            </Box>
+          </div>
           
-          <DialogContentText className='dialog-section-title'>
-            Colors
-          </DialogContentText>
-          <Box
-            noValidate
-            component="div"
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-            //   m: 'auto',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <InputLabel className='section-item-name'>
-            Correct Guess
-            </InputLabel>
+          <div className='settings-section'>
+            <DialogContentText className='dialog-section-title'>
+                Colors
+            </DialogContentText>
 
-            <div className='setting-section'>
+            <Box
+                className='settings-item-row'
+                noValidate
+                component="div"
+                sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                //   m: 'auto',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                }}
+            >
+                <InputLabel className='section-item-name'>
+                Correct Guess
+                </InputLabel>
 
-                <ColorButton color={Preference.CorrectGuess}/>
-            </div>
-          </Box>
+                <div className='setting-section'>
+                    <ColorButton color={Preference.CorrectGuess}/>
+                </div>
+            </Box>
 
-          <Box
-            noValidate
-            component="div"
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-            //   m: 'auto',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <InputLabel className='section-item-name'>
-            Incorrect Guess
-            </InputLabel>
+            <Box
+                className='settings-item-row'
+                noValidate
+                component="div"
+                sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                //   m: 'auto',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                }}
+            >
+                <InputLabel className='section-item-name'>
+                In-Word Guess
+                </InputLabel>
 
-            <div className='setting-section'>
+                <div className='setting-section'>
+                    <ColorButton color={Preference.InWordGuess}/>
+                </div>
+            </Box>
+            
+            <Box
+                className='settings-item-row'
+                noValidate
+                component="div"
+                sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                //   m: 'auto',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                }}
+            >
+                <InputLabel className='section-item-name'>
+                Incorrect Guess
+                </InputLabel>
 
-                <ColorButton color={Preferences.getColorPreference(PreferenceName.new) ?? Preference.new}/>
-            </div>
-          </Box>
+                <div className='setting-section'>
+                    <ColorButton color={Preference.IncorrectGuess}/>
+                </div>
+            </Box>
+            
+            <Box
+                className='settings-item-row'
+                noValidate
+                component="div"
+                sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                //   m: 'auto',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                }}
+            >
+                <InputLabel className='section-item-name'>
+                Random test 
+                </InputLabel>
+
+                <div className='setting-section'>
+                    <ColorButton color={Preferences.getColorPreference(PreferenceName.new) ?? Preference.new}/>
+                </div>
+            </Box>
+          </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>

@@ -12,8 +12,9 @@
 }
 
 .dialog-section-title {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 24px !important;
+    font-weight: 900 !important;
+    margin-bottom: 0.25em !important;
 }
 
 #settings-dialog-box {
@@ -21,11 +22,20 @@
 }
 
 .section-item-name {
-    font-weight: bold;
+    font-weight: 600 !important;
+    font-size: 18px !important;
 }
 
 .setting-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.settings-section:not(:last-child) {
+    margin-bottom: 1.5em;
+}
+
+.settings-item-row:not(:last-child) {
+    margin-bottom: 0.75em;
 }
