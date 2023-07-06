@@ -23,3 +23,9 @@
 .section-item-name {
     font-weight: bold;
 }
+
+.setting-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

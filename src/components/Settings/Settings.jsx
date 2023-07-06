@@ -16,7 +16,11 @@ import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
 import Slide from '@mui/material/Slide';
 import ColorPicker from './ColorPicker/ColorPicker';
-
+import ColorButton from './ColorButton/ColorButtonModal';
+import { correctGuess,
+         incorrectGuess
+} from '/src/utils/Preferences'
+import { auto } from '@popperjs/core';
 
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -100,7 +104,11 @@ export default function MaxWidthDialog() {
             <InputLabel className='section-item-name'>
             Correct Guess
             </InputLabel>
-            <ColorPicker  />
+
+            <div className='setting-section'>
+
+                <ColorButton color={correctGuess}/>
+            </div>
           </Box>
         </DialogContent>
         <DialogActions>

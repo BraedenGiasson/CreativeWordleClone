@@ -1,28 +1,22 @@
 import { useState } from "react";
 import { HexColorPicker } from "react-colorful";
 
-export default function ColorPicker() {
-  const [color, setColor] = useState("#b32aa9");
+export default function ColorPicker({ pickedColor, changeColor }) {
+  let [color, setColor] = useState(pickedColor);
+
+  function handleState(newColor) {
+    setColor(newColor)
+    changeColor(newColor)
+    // console.log(newColor);
+  }
 
   return (
     <div className="App">
-      <HexColorPicker color={color} onChange={setColor} />
+      <HexColorPicker color={color} onChange={handleState} />
 
-      <div className="value" style={{ borderLeftColor: color }}>
+      {/* <div className="value" >
         Current color is {color}
-      </div>
+      </div> */}
     </div>
   );
 }
-
-// import React from 'react'
-// import { SketchPicker } from 'react-color'
- 
-// class ColorPicker extends React.Component {
- 
-//   render() {
-//     return <SketchPicker />
-//   }
-// }
-
-// export default ColorPicker
