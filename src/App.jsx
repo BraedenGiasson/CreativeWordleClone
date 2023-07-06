@@ -6,10 +6,9 @@ import Grid from '@mui/material/Unstable_Grid2'
 import { Tile } from './components/Board/Tile/Tile'
 
 import { board } from './utils/boardSize'
+import Preferences from './utils/updatePreferences'
 
 function App() {
-  
-
   return (
     <>
       <Navbar/>

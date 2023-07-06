@@ -21,6 +21,8 @@ import { auto } from '@popperjs/core';
 import { Preference } from '../../utils/preference';
 import Preferences from '../../utils/updatePreferences';
 import { PreferenceName } from '../../utils/preferenceName';
+import UserEnsure from '../User Ensure/UserEnsure';
+import { DefaultColorPreference } from '../../utils/defaultColorPreferences';
 
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -30,7 +32,6 @@ const Transition = forwardRef(function Transition(props, ref) {
 export default function MaxWidthDialog() {
   const [open, setOpen] = useState(false);
   const [fullWidth, setFullWidth] = useState(true);
-  const [maxWidth, setMaxWidth] = useState('sm');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,13 +39,6 @@ export default function MaxWidthDialog() {
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const handleMaxWidthChange = (event) => {
-    setMaxWidth(
-      // @ts-expect-error autofill of arbitrary value is not handled.
-      event.target.value,
-    );
   };
 
   const handleFullWidthChange = (event) => {
@@ -60,7 +54,6 @@ export default function MaxWidthDialog() {
       <Dialog
       id='dialog-window'
         fullWidth={fullWidth}
-        maxWidth={maxWidth}
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
@@ -114,7 +107,8 @@ export default function MaxWidthDialog() {
                 </InputLabel>
 
                 <div className='setting-section'>
-                    <ColorButton color={Preference.CorrectGuess}/>
+                    <ColorButton color={Preferences.getColorPreference(PreferenceName.CorrectGuess) ?? DefaultColorPreference.CorrectGuess}
+                    colorName={PreferenceName.CorrectGuess}/>
                 </div>
             </Box>
 
@@ -135,7 +129,8 @@ export default function MaxWidthDialog() {
                 </InputLabel>
 
                 <div className='setting-section'>
-                    <ColorButton color={Preference.InWordGuess}/>
+                    <ColorButton color={Preferences.getColorPreference(PreferenceName.InWordGuess) ?? DefaultColorPreference.InWordGuess}
+                    colorName={PreferenceName.InWordGuess}/>
                 </div>
             </Box>
             
@@ -156,34 +151,17 @@ export default function MaxWidthDialog() {
                 </InputLabel>
 
                 <div className='setting-section'>
-                    <ColorButton color={Preference.IncorrectGuess}/>
-                </div>
-            </Box>
-            
-            <Box
-                className='settings-item-row'
-                noValidate
-                component="div"
-                sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                //   m: 'auto',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                }}
-            >
-                <InputLabel className='section-item-name'>
-                Random test 
-                </InputLabel>
-
-                <div className='setting-section'>
-                    <ColorButton color={Preferences.getColorPreference(PreferenceName.new) ?? Preference.new}/>
+                    <ColorButton color={Preferences.getColorPreference(PreferenceName.IncorrectGuess) ?? DefaultColorPreference.IncorrectGuess}
+                    colorName={PreferenceName.IncorrectGuess}/>
                 </div>
             </Box>
           </div>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+        <DialogActions style={{
+          justifyContent: 'space-between'
+        }}>
+          <UserEnsure/>
+          <Button onClick={handleClose}>Done</Button>
         </DialogActions>
       </Dialog>
     </Fragment>

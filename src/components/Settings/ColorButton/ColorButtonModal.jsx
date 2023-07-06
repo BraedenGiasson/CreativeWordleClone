@@ -21,7 +21,7 @@ import { PreferenceName } from '../../../utils/preferenceName';
 import { Preference } from '../../../utils/preference';
 
 
-export default function ColorButton({ color }) {
+export default function ColorButton({ color, colorName }) {
     const [open, setOpen] = useState(false);
     let [state, setState] = useState(color);
     let [newColor, setNewColor] = useState(state);
@@ -32,10 +32,9 @@ export default function ColorButton({ color }) {
 
     const handleSetNewColor = () => {
         setNewColor(state);
-        console.log(state);
         setOpen(false);
 
-        Preferences.setColorPreference(PreferenceName.new, state)
+        Preferences.setColorPreference(colorName, state)
     }
 
     const handleOpen = () => {
@@ -66,12 +65,13 @@ export default function ColorButton({ color }) {
         <Dialog
         open={open}
         onClose={handleClose}
-      >
-        <DialogTitle id='settings-title'>Color Picker</DialogTitle>
+        >
+        <DialogTitle id='settings-title'>Change Color</DialogTitle>
         <DialogContent>
           <ColorPicker pickedColor={newColor} changeColor={handleState}/>
         </DialogContent>
         <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSetNewColor}>Save</Button>
         </DialogActions>
       </Dialog>
