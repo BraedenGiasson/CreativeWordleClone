@@ -1,6 +1,6 @@
 import './Settings.css'
 
-import { useState, Fragment } from 'react';
+import { useState, Fragment, forwardRef, Component as comp } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -14,6 +14,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
+import Slide from '@mui/material/Slide';
+import ColorPicker from './ColorPicker/ColorPicker';
+
+
+
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function MaxWidthDialog() {
   const [open, setOpen] = useState(false);
@@ -51,7 +59,7 @@ export default function MaxWidthDialog() {
         maxWidth={maxWidth}
         open={open}
         onClose={handleClose}
-        
+        TransitionComponent={Transition}
       >
         <DialogTitle id='settings-title'>Settings</DialogTitle>
         <DialogContent>
@@ -73,6 +81,26 @@ export default function MaxWidthDialog() {
             Dark Theme
             </InputLabel>
             <Switch checked={fullWidth} onChange={handleFullWidthChange} />
+          </Box>
+          
+          <DialogContentText className='dialog-section-title'>
+            Colors
+          </DialogContentText>
+          <Box
+            noValidate
+            component="div"
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+            //   m: 'auto',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <InputLabel className='section-item-name'>
+            Correct Guess
+            </InputLabel>
+            <ColorPicker  />
           </Box>
         </DialogContent>
         <DialogActions>

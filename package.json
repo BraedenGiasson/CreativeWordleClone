@@ -14,7 +14,10 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.6",
     "@mui/styled-engine-sc": "^5.12.0",
+    "material-ui-color-picker": "^3.5.1",
     "react": "^18.2.0",
+    "react-color": "^2.19.3",
+    "react-colorful": "^5.6.1",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"
   },
@@ -23,7 +26,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "eslint": "^8.38.0",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react": "^7.25.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.9"
