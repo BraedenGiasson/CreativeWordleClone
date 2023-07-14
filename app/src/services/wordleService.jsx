@@ -3,7 +3,7 @@ import { PreferenceName } from '../utils/preferenceName'
 import { board } from '../utils/boardSize'
 import { Key } from '../utils/keyboardKeyNames'
 
-const wordleService = (solution) => {
+const wordleService = (solution, words) => {
   const [turn, setTurn] = useState(0) 
   const [currentGuess, setCurrentGuess] = useState('')
   const [guesses, setGuesses] = useState([...Array(board.rows)]) // each guess is an array
@@ -41,6 +41,11 @@ const wordleService = (solution) => {
   // update the isCorrect state if the guess is correct
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
+    // if (!words.some((word) => word.word === currentGuess)){
+    //   console.log('not in word list');
+    //   return null
+    // }
+
     if (currentGuess === solution) {
       setIsCorrect(true)
     }
@@ -68,11 +73,6 @@ const wordleService = (solution) => {
         console.log('you used all your guesses!')
         return
       }
-      // // do not allow duplicate words
-      // if (history.includes(currentGuess)) {
-      //   console.log('you already tried that word.')
-      //   return
-      // }
       // check word is 5 chars
       if (currentGuess.length !== board.columns) {
         console.log('word must be %d chars.', board.columns)

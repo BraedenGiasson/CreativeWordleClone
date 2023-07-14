@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 import wordleService from '../../services/wordleService'
 import Board from '../Board/Board'
 
-export default function Wordle({ solution }) {
-    const { currentGuess, guesses, turn, isCorrect, handleKeyup } = wordleService(solution)
+export default function Wordle({ solution, words }) {
+    const { currentGuess, guesses, turn, isCorrect, handleKeyup } = wordleService(solution, words)
 
     useEffect(() => {
       window.addEventListener('keyup', handleKeyup)
