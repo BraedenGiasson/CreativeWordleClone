@@ -67,7 +67,8 @@ const wordleService = (solution, words) => {
   // handle keyup event & track current guess
   // if user presses enter, add the new guess
   const handleKeyup = ({ key }) => {
-    if (key === Key.Enter) {
+    console.log(key.toLowerCase());
+    if (key === Key.Enter || key === Key.UppercaseEnter) {
       // only add guess if turn is less than 5
       if (turn > board.columns) {
         console.log('you used all your guesses!')
@@ -88,11 +89,15 @@ const wordleService = (solution, words) => {
       return
     }
 
-    if (/^[A-Za-z]$/.test(key)) {
+    if (/^[A-Za-z]$/.test(key.toLowerCase())) {
       if (currentGuess.length < board.columns) {
-        setCurrentGuess(prev => prev + key)
+        console.log(currentGuess);
+        setCurrentGuess(prev => prev + key.toLowerCase())
+        console.log(currentGuess);
       }
     }
+
+    console.log(currentGuess);
   }
 
   return {turn, currentGuess, guesses, isCorrect, handleKeyup}

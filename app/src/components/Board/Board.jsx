@@ -7,6 +7,7 @@ export default function Board({ guesses, currentGuess, turn }) {
     <div>
       {guesses.map((guess, index) => {
         if (turn === index) {
+          console.log(turn + ' ' + index);
           return <Row key={index} currentGuess={currentGuess} />
         }
 

@@ -11,10 +11,23 @@
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     font-weight: bold;
+    animation: bounce 0.2s ease-in-out forwards;
   }
 
   #big {
     /* width: 100px; */
     width: 65.3958px;
     font-size: 15px;
+  }
+
+  @keyframes bounce {
+    0% { 
+      transform: scale(1);
+    }
+    50% { 
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
   }

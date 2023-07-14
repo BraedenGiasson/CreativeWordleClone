@@ -34,8 +34,6 @@ function App() {
       {solution && <div style={{
         textAlign: 'center'
       }}>Word is: {solution}</div>}
-
-      <Keyboard/>
     </>
   )
 }
