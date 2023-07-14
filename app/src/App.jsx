@@ -9,6 +9,7 @@ import { board } from './utils/boardSize'
 import Preferences from './utils/updatePreferences'
 import wordleService from './services/wordleService'
 import Wordle from './components/Wordle/Wordle'
+import Keyboard from './components/Keyboard/Keyboard'
 
 function App() {
   const [solution, setSolution] = useState(null);
@@ -33,6 +34,8 @@ function App() {
       {solution && <div style={{
         textAlign: 'center'
       }}>Word is: {solution}</div>}
+
+      <Keyboard/>
     </>
   )
 }

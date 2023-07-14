@@ -16,7 +16,7 @@
     width: 60px;
     height: 60px;
     border: 1px solid var(--initial-border-color);
-    margin: 3.5px;
+    margin: 3px;
     text-align: center;
     line-height: 60px;
     text-transform: uppercase;
@@ -93,7 +93,7 @@
       border-color: var(--border-color);
     }
     50% { 
-      transform: scale(1.15);
+      transform: scale(1.125);
     }
     100% {
       transform: scale(1);
