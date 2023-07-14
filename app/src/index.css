@@ -33,3 +33,23 @@ body {
   justify-content: center;
   padding: 1.5em 0;
 }
+
+/* @keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    background: white;
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+    background: green;
+  }
+} */
+
+/* .flip {
+  animation: flip 500ms ease forwards;
+} */

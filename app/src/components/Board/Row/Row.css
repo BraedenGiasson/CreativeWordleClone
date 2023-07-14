@@ -1,0 +1,102 @@
+:root{
+    --correct: #538D4E;
+    --incorrect: #3A3A3C;
+    --inWord: #B59F3B;
+    --border-color: #3a3a3c;
+    --initial-border-color: #3a3a3c;
+}
+
+.row {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .row > div {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--initial-border-color);
+    margin: 3.5px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.5em;
+  }
+
+  .row > div.correctGuess {
+    --background: var(--correct);
+    --border-color: var(--correct);
+    /* background: var(--correct); */
+    /* border-color: var(--correct); */
+    animation: flip 500ms ease forwards;
+  }
+  .row > div.incorrectGuess {
+    --background: var(--incorrect);
+    --border-color: var(--incorrect);
+    /* background: var(--incorrect); */
+    /* border-color: var(--incorrect); */
+    animation: flip 500ms ease forwards;
+  }
+  .row > div.inWordGuess {
+    --background: var(--inWord);
+    --border-color: var(--inWord);
+    /* background: var(--inWord); */
+    /* border-color: var(--inWord); */
+    animation: flip 500ms ease forwards;
+  }
+  /* .row > div:nth-child(2) {
+    animation-delay: 250ms;
+  }
+  .row > div:nth-child(3) {
+    animation-delay: 500ms;
+  }
+  .row > div:nth-child(4) {
+    animation-delay: 750ms;
+  }
+  .row > div:nth-child(5) {
+    animation-delay: 1000ms;
+  }
+  .row > div:nth-child(6) {
+    animation-delay: 1250ms;
+  } */
+  /* .row > div:nth-child(6) {
+    animation-delay: 1500ms;
+  } */
+  
+
+  .row.current > div.filled {
+    animation: bounce 0.2s ease-in-out forwards;
+  }
+
+  @keyframes flip {
+    0% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0);
+      background: var(--background);
+      border-color: var(--border-color);
+    }
+  
+    100% {
+      transform: scaleY(1);
+      background: var(--background);
+      border-color: var(--border-color);
+    }
+  }
+
+  @keyframes bounce {
+    0% { 
+      transform: scale(1);
+      border-color: var(--border-color);
+    }
+    50% { 
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+      border-color: #565758;
+    }
+  }
