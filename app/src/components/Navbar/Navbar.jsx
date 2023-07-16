@@ -1,5 +1,5 @@
 import './Navbar.css'
-import MaxWidthDialog from '../Settings/Settings'
+import Settings from '../Settings/Settings'
 
 export function Navbar() {
     return (
@@ -8,7 +8,7 @@ export function Navbar() {
 
             <div>
                 {/* <button><img src="/src/assets/setting.png" alt="my image" /></button> */}
-                <MaxWidthDialog/>
+                <Settings/>
             </div>
         </nav>
     )

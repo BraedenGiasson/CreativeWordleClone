@@ -29,9 +29,14 @@ const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function MaxWidthDialog() {
+export default function Settings() {
   const [open, setOpen] = useState(false);
   const [fullWidth, setFullWidth] = useState(true);
+
+  const [correctColor, setCorrectColor] = useState(Preferences.getColorPreference(PreferenceName.CorrectGuess) ?? DefaultColorPreference.CorrectGuess);
+  const [inWordColor, setInWordColor] = useState(Preferences.getColorPreference(PreferenceName.InWordGuess) ?? DefaultColorPreference.InWordGuess);
+  const [incorrectColor, setIncorrectColor] = useState(Preferences.getColorPreference(PreferenceName.IncorrectGuess) ?? DefaultColorPreference.IncorrectGuess);
+  const [isColorsReset, setIsColorsReset] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -39,6 +44,7 @@ export default function MaxWidthDialog() {
 
   const handleClose = () => {
     setOpen(false);
+    setIsColorsReset(false);
   };
 
   const handleFullWidthChange = (event) => {
@@ -107,7 +113,10 @@ export default function MaxWidthDialog() {
                 </InputLabel>
 
                 <div className='setting-section'>
-                    <ColorButton color={Preferences.getColorPreference(PreferenceName.CorrectGuess) ?? DefaultColorPreference.CorrectGuess}
+                    <ColorButton 
+                    // color={Preferences.getColorPreference(PreferenceName.CorrectGuess) ?? DefaultColorPreference.CorrectGuess}
+                    color={correctColor}
+                    setColor={setCorrectColor}
                     colorName={PreferenceName.CorrectGuess}/>
                 </div>
             </Box>
@@ -129,7 +138,10 @@ export default function MaxWidthDialog() {
                 </InputLabel>
 
                 <div className='setting-section'>
-                    <ColorButton color={Preferences.getColorPreference(PreferenceName.InWordGuess) ?? DefaultColorPreference.InWordGuess}
+                    <ColorButton 
+                    // color={Preferences.getColorPreference(PreferenceName.InWordGuess) ?? DefaultColorPreference.InWordGuess}
+                    color={inWordColor}
+                    setColor={setInWordColor}
                     colorName={PreferenceName.InWordGuess}/>
                 </div>
             </Box>
@@ -151,7 +163,10 @@ export default function MaxWidthDialog() {
                 </InputLabel>
 
                 <div className='setting-section'>
-                    <ColorButton color={Preferences.getColorPreference(PreferenceName.IncorrectGuess) ?? DefaultColorPreference.IncorrectGuess}
+                    <ColorButton 
+                    // color={Preferences.getColorPreference(PreferenceName.IncorrectGuess) ?? DefaultColorPreference.IncorrectGuess}
+                    color={incorrectColor}
+                    setColor={setIncorrectColor}
                     colorName={PreferenceName.IncorrectGuess}/>
                 </div>
             </Box>
@@ -160,7 +175,11 @@ export default function MaxWidthDialog() {
         <DialogActions style={{
           justifyContent: 'space-between'
         }}>
-          <UserEnsure/>
+          <UserEnsure 
+          // setIsColorReset={setIsColorsReset} 
+          setCorrectColor={setCorrectColor}
+          setInWordColor={setInWordColor}
+          setIncorrectColor={setIncorrectColor}/>
           <Button onClick={handleClose}>Done</Button>
         </DialogActions>
       </Dialog>

@@ -32,10 +32,10 @@ export default function Wordle({ solution, words }) {
   
   return (
     <div>
-      <div style={{
+      {/* <div style={{
         color: 'white',
         textAlign: 'center'
-      }}>Current Guess - {currentGuess}</div>
+      }}>Current Guess - {currentGuess}</div> */}
       <Board guesses={guesses} currentGuess={currentGuess} turn={turn} />
       <Keyboard solution={solution} words={words} click={clickHandler}/>
     </div>

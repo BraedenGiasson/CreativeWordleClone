@@ -19,22 +19,27 @@ import zIndex from '@mui/material/styles/zIndex';
 import Preferences from '../../../utils/updatePreferences';
 import { PreferenceName } from '../../../utils/preferenceName';
 import { Preference } from '../../../utils/preference';
+import { DefaultColorPreference } from '../../../utils/defaultColorPreferences';
 
 
-export default function ColorButton({ color, colorName }) {
+// export default function ColorButton({ color, colorName, isColorsReset, setIsColorsReset }) {
+export default function ColorButton({ color, setColor, colorName }) {
     const [open, setOpen] = useState(false);
-    let [state, setState] = useState(color);
-    let [newColor, setNewColor] = useState(state);
+    let [newColor, setNewColor] = useState(color);
+    // let [newColor, setNewColor] = useState(state);
     
     function handleState(newState) {
-        setState(newState);
+        setNewColor(newState);
+        // setColor(newState);
     }
 
     const handleSetNewColor = () => {
-        setNewColor(state);
+        // setNewColor(state);
+        setColor(newColor);
         setOpen(false);
 
-        Preferences.setColorPreference(colorName, state)
+        Preferences.setColorPreference(colorName, newColor)
+        // Preferences.setColorPreference(colorName, color)
     }
 
     const handleOpen = () => {
@@ -43,22 +48,23 @@ export default function ColorButton({ color, colorName }) {
     const handleClose = () => {
       setOpen(false);
     };
-  
+
     return (
       <Fragment>
         <Button onClick={handleOpen}
         className='change-color-btn'
         sx={{
-            backgroundColor: newColor,
+            backgroundColor: color,
             height: 25,
             "&:hover": {
-                backgroundColor: newColor
+                // backgroundColor: isColorsReset ? resetColor() : newColor
+                backgroundColor: color
             },
             "&:focus": {
-                backgroundColor: newColor
+                backgroundColor: color
             },
             "&:active": {
-                backgroundColor: newColor
+                backgroundColor: color
             }
         }}></Button>
 
@@ -68,7 +74,7 @@ export default function ColorButton({ color, colorName }) {
         >
         <DialogTitle id='settings-title'>Change Color</DialogTitle>
         <DialogContent>
-          <ColorPicker pickedColor={newColor} changeColor={handleState}/>
+          <ColorPicker pickedColor={color} changeColor={handleState} colorName={colorName}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
