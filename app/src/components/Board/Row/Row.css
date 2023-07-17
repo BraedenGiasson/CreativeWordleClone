@@ -4,6 +4,7 @@
     --inWord: #B59F3B;
     --border-color: #3a3a3c;
     --initial-border-color: #3a3a3c;
+    --bg-color-dark: #121213;
 }
 
 .row {
@@ -22,6 +23,7 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 2.5em;
+    background-color: var(--bg-color-dark);
   }
 
   .row > div.correctGuess {
@@ -93,7 +95,7 @@
       border-color: var(--border-color);
     }
     50% { 
-      transform: scale(1.125);
+      transform: scale(2);
     }
     100% {
       transform: scale(1);

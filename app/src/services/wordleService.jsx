@@ -8,7 +8,8 @@ const wordleService = (solution, words) => {
   const [currentGuess, setCurrentGuess] = useState('')
   const [guesses, setGuesses] = useState([...Array(board.rows)]) // each guess is an array
   const [history, setHistory] = useState([]) // each guess is a string
-  const [isCorrect, setIsCorrect] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [usedKeys, setUsedKeys] = useState({});
 
   // format a guess into an array of letter objects 
   // e.g. [{key: 'a', color: 'yellow'}]
@@ -61,6 +62,31 @@ const wordleService = (solution, words) => {
     setTurn(prevTurn => {
       return prevTurn + 1
     })
+    setUsedKeys((previousUsedKeys) => {
+      const newKeys = {...previousUsedKeys};
+
+      formattedGuess.forEach((letter) => {
+        const currentGuessType = newKeys[letter.key];
+
+        if (letter.guessType === PreferenceName.CorrectGuess) {
+          newKeys[letter.key] = PreferenceName.CorrectGuess;
+          return;
+        }
+        if (letter.guessType === PreferenceName.InWordGuess
+          && currentGuessType !== PreferenceName.CorrectGuess) {
+          newKeys[letter.key] = PreferenceName.InWordGuess;
+          return;
+        }
+        if (letter.guessType === PreferenceName.IncorrectGuess
+          && currentGuessType !== PreferenceName.CorrectGuess
+          && currentGuessType !== PreferenceName.InWordGuess) {
+          newKeys[letter.key] = PreferenceName.IncorrectGuess;
+          return;
+        }
+      })
+
+      return newKeys;
+    })
     setCurrentGuess('')
   }
 
@@ -100,7 +126,7 @@ const wordleService = (solution, words) => {
     console.log(currentGuess);
   }
 
-  return {turn, currentGuess, guesses, isCorrect, handleKeyup}
+  return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup}
 }
 
 export default wordleService

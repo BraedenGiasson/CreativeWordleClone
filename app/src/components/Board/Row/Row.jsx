@@ -6,7 +6,14 @@ export default function Row({ guess, currentGuess }) {
 
   if (guess) {
     const animation_duration = 500; //ms
-
+    /**
+     * 250
+     * 500
+     * 750
+     * 1000
+     * 1250
+     * 1500
+     */
     return (
       <div className="row past">
         {guess.map((letter, index) => (
