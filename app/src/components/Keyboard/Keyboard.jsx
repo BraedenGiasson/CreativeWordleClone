@@ -20,7 +20,8 @@ export default function Keyboard({ solution, words, click: keyClick, usedKeys })
                                             key={key} 
                                             keyVal={key} 
                                             keyClick={keyClick}
-                                            guessColor={guessType}/>;
+                                            guessColor={guessType}
+                                            />;
                             }
                         }
 

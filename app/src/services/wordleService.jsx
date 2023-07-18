@@ -10,6 +10,7 @@ const wordleService = (solution, words) => {
   const [history, setHistory] = useState([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false);
   const [usedKeys, setUsedKeys] = useState({});
+  const [notInWordGuess, setNotInWordGuess] = useState(false);
 
   // format a guess into an array of letter objects 
   // e.g. [{key: 'a', color: 'yellow'}]
@@ -44,6 +45,7 @@ const wordleService = (solution, words) => {
   const addNewGuess = (formattedGuess) => {
     // if (!words.some((word) => word.word === currentGuess)){
     //   console.log('not in word list');
+    //   setNotInWordGuess(true);
     //   return null
     // }
 
@@ -126,7 +128,7 @@ const wordleService = (solution, words) => {
     console.log(currentGuess);
   }
 
-  return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup}
+  return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup, notInWordGuess, setNotInWordGuess}
 }
 
 export default wordleService

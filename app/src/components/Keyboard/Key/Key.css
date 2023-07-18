@@ -11,7 +11,7 @@
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     font-weight: bold;
-    animation: bounce 0.2s ease-in-out forwards;
+    /* animation: bounce 0.2s ease-in-out forwards; */
   }
 
   #big {
@@ -20,20 +20,20 @@
     font-size: 15px;
   }
 
+  .correctGuess,
+  .inWordGuess,
+  .incorrectGuess {
+    transition: all 0.25s ease-in;
+  }
+  
   .correctGuess {
-    /* animation-delay: 3000ms; */
     background: #538D4E;
-    transition: all 0.3s ease-in;
   }
   .inWordGuess {
-    /* animation-delay: 3000ms; */
     background: #B59F3B;
-    transition: all 0.3s ease-in;
   }
   .incorrectGuess {
-    /* transition: 3000ms; */
     background: #3A3A3C;
-    transition: all 0.3s ease-in;
   }
 
   @keyframes bounce {
