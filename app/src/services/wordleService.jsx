@@ -43,21 +43,24 @@ const wordleService = (solution, words) => {
   // update the isCorrect state if the guess is correct
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
-    // if (!words.some((word) => word.word === currentGuess)){
-    //   console.log('not in word list');
-    //   setNotInWordGuess(true);
-    //   return null
-    // }
-
     if (currentGuess === solution) {
       setIsCorrect(true)
     }
+
+    console.log(guesses);
 
     setGuesses(prevGuesses => {
       let newGuesses = [...prevGuesses]
       newGuesses[turn] = formattedGuess
       return newGuesses
     })
+
+    if (!words.some((word) => word.word === currentGuess)){
+      console.log('not in word list');
+      setNotInWordGuess(true);
+      return null
+    }
+
     setHistory(prevHistory => {
       return [...prevHistory, currentGuess]
     })
@@ -128,7 +131,7 @@ const wordleService = (solution, words) => {
     console.log(currentGuess);
   }
 
-  return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup, notInWordGuess, setNotInWordGuess}
+  return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup, notInWordGuess, setNotInWordGuess, setGuesses}
 }
 
 export default wordleService
