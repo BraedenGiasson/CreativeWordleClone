@@ -3,19 +3,19 @@ import Row from './Row/Row'
 
 // components
 export default function Board({ guesses, setGuesses, currentGuess, turn, notInWordGuess, setNotInWordGuess }) {
- console.log(guesses);
-  
+
+  console.log(guesses);
+
   return (
     <div>
       {guesses.map((guess, index) => {
         if (turn === index) {
-          console.log(turn + ' ' + index);
           return <Row 
-                      key={index}
-                      currentGuess={currentGuess}
+                      key={index}                      
                       setGuesses={setGuesses}
                       notInWordGuess={notInWordGuess}
-                      setNotInWordGuess={setNotInWordGuess} />
+                      setNotInWordGuess={setNotInWordGuess}
+                      currentGuess={currentGuess} />
         }
 
         return <Row 

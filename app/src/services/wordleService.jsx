@@ -16,6 +16,7 @@ const wordleService = (solution, words) => {
   // e.g. [{key: 'a', color: 'yellow'}]
   const formatGuess = () => {
     let solutionArray = [...solution]
+    console.log(currentGuess);
     let formattedGuess = [...currentGuess].map((l) => {
       return {key: l, guessType: PreferenceName.IncorrectGuess}
     })
@@ -55,11 +56,11 @@ const wordleService = (solution, words) => {
       return newGuesses
     })
 
-    if (!words.some((word) => word.word === currentGuess)){
-      console.log('not in word list');
-      setNotInWordGuess(true);
-      return null
-    }
+    // if (!words.some((word) => word.word === currentGuess)){
+    //   console.log('not in word list');
+    //   setNotInWordGuess(true);
+    //   return 
+    // }
 
     setHistory(prevHistory => {
       return [...prevHistory, currentGuess]
@@ -92,6 +93,7 @@ const wordleService = (solution, words) => {
 
       return newKeys;
     })
+
     setCurrentGuess('')
   }
 
@@ -99,6 +101,7 @@ const wordleService = (solution, words) => {
   // if user presses enter, add the new guess
   const handleKeyup = ({ key }) => {
     console.log(key.toLowerCase());
+
     if (key === Key.Enter || key === Key.UppercaseEnter) {
       // only add guess if turn is less than 5
       if (turn > board.columns) {
@@ -108,8 +111,31 @@ const wordleService = (solution, words) => {
       // check word is 5 chars
       if (currentGuess.length !== board.columns) {
         console.log('word must be %d chars.', board.columns)
+        if (!notInWordGuess){
+          console.log('made it');
+          setNotInWordGuess(true);
+
+          setTimeout(() => setNotInWordGuess(false), 820)
+        }
         return
       }
+
+      // check current guess is in the word list
+      if (!words.some((word) => word.word === currentGuess)){
+        console.log('not in word list');
+        
+        if (!notInWordGuess){
+          console.log('made it');
+          setNotInWordGuess(true);
+
+          setTimeout(() => setNotInWordGuess(false), 820)
+        }
+
+        return 
+      }
+      // else {
+      //   setNotInWordGuess(false);
+      // }
 
       const formatted = formatGuess();
       addNewGuess(formatted);
@@ -122,9 +148,8 @@ const wordleService = (solution, words) => {
 
     if (/^[A-Za-z]$/.test(key.toLowerCase())) {
       if (currentGuess.length < board.columns) {
-        console.log(currentGuess);
-        setCurrentGuess(prev => prev + key.toLowerCase())
-        console.log(currentGuess);
+        setCurrentGuess(prev => prev + key.toLowerCase());
+        setNotInWordGuess(false);
       }
     }
 

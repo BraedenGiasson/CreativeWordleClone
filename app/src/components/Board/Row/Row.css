@@ -4,7 +4,8 @@
     --inWord: #B59F3B;
     --border-color: #3a3a3c;
     --initial-border-color: #3a3a3c;
-    --bg-color-dark: #121213;
+    /* --bg-color-dark: #121213; */
+    --bg-color-dark: #0f172a;
 }
 
 .row {
@@ -29,44 +30,25 @@
   .row > div.correctGuess {
     --background: var(--correct);
     --border-color: var(--correct);
-    /* background: var(--correct); */
-    /* border-color: var(--correct); */
     animation: flip 500ms ease forwards;
   }
   .row > div.incorrectGuess {
     --background: var(--incorrect);
     --border-color: var(--incorrect);
-    /* background: var(--incorrect); */
-    /* border-color: var(--incorrect); */
     animation: flip 500ms ease forwards;
   }
   .row > div.inWordGuess {
     --background: var(--inWord);
     --border-color: var(--inWord);
-    /* background: var(--inWord); */
-    /* border-color: var(--inWord); */
     animation: flip 500ms ease forwards;
-    /* animation: none; */
   }
-  /* .row > div:nth-child(2) {
-    animation-delay: 250ms;
+
+  .row > div.notInWord {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
-  .row > div:nth-child(3) {
-    animation-delay: 500ms;
-  }
-  .row > div:nth-child(4) {
-    animation-delay: 750ms;
-  }
-  .row > div:nth-child(5) {
-    animation-delay: 1000ms;
-  }
-  .row > div:nth-child(6) {
-    animation-delay: 1250ms;
-  } */
-  /* .row > div:nth-child(6) {
-    animation-delay: 1500ms;
-  } */
-  
 
   .row.current > div.filled {
     animation: bounce 0.2s ease-in-out forwards;

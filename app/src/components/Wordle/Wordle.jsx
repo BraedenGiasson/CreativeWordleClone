@@ -5,31 +5,21 @@ import Board from '../Board/Board'
 import Keyboard from '../Keyboard/Keyboard'
 
 export default function Wordle({ solution, words }) {
-    const { currentGuess, guesses, turn, isCorrect, usedKeys, handleKeyup, notInWordGuess, setNotInWordGuess, setGuesses } = wordleService(solution, words)
+  const { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup, notInWordGuess, setNotInWordGuess, setGuesses } = wordleService(solution, words)
 
-    useEffect(() => {
-      window.addEventListener('keyup', handleKeyup)
-  
-      return () => window.removeEventListener('keyup', handleKeyup)
-    }, [handleKeyup])
+  useEffect(() => {
+    window.addEventListener('keyup', handleKeyup)
 
-        const clickHandler = (value) => {
-            console.log(value);
-            handleKeyup({
-                key: value
-            })
-        };
-    // useEffect(() => {
+    return () => window.removeEventListener('keyup', handleKeyup)
+  }, [handleKeyup])
 
-    //   .addEventListener('click', clickHandler)
-  
-    //   return () => window.removeEventListener('click', clickHandler)
-    // }, [handleKeyup])
-    
-    useEffect(() => {
-        console.log(guesses, turn, isCorrect, currentGuess)
-      }, [guesses, turn, isCorrect, currentGuess])
-  
+  const clickHandler = (value) => {
+    console.log(value);
+    handleKeyup({
+      key: value
+    })
+  };
+
   return (
     <div>
       <div style={{
