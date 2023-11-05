@@ -68,11 +68,7 @@ Click '**yes**' if you want to **reset the colors**, and just like that, the cha
 Click '**no**' if you **don't want to reset the colors** at the given time.
 
 
-
-
 ## :earth_americas: How to Play
-
-
 
 
 
