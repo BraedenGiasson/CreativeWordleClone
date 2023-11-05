@@ -57,7 +57,7 @@ The **default color** for a '**In-Word Guess**' in my clone is :yellow_heart: **
 
 The **default color** for a '**Incorrect Guess**' in my clone is :grey_exclamation: **grey**.
 
-#### Resetting colors
+#### :recycle: Resetting colors
 
 The benefit with being able to change the colors, is you can also **reset** them if you don't like the **color** you chose! 
 
