@@ -3,6 +3,13 @@
 
 - **:question: [Why this Project?](#question-why-this-project)**
 
+- **:twisted_rightwards_arrows: [Wordle Variations](#twisted_rightwards_arrows-wordle-variations)**
+  - **:dizzy: [Infinite games](#dizzy-infinite-games)**
+
+  - **:information_source: [5, 6, and 7 letter words](#information_source-5,-6,-and-7-letter-words)**
+
+  - **:art: [Wordle colors](#art-wordle-colors)**
+
 - **:earth_americas: [How to Play](#earth_americas-how-to-play)**
 - **:video_game: [Play the Game](#video_game-play-the-game)**
 - **:open_file_folder: [Languages, Frameworks/Libraries, and Tools](#open_file_folder-languages-frameworkslibraries-and-tools)**
@@ -18,14 +25,14 @@ This is when the **idea** popped up, to create a **Wordle clone** as a personal 
 
 Why not add a few variations to the game to make it just a little bit more **enjoyable**?
 
-### Infinite games
+### :dizzy: Infinite games
 
 Isn't it **annoying** that you can only play the Wordle game once a day? Isn't it so fun to play you wish you can just **keep playing**? 
 
 That's where one of the variation ideas came to mind, in **my clone**, you can play **game after game**, for **as long as you want**! There is **no limit** to how many times you can play during a day, because every new game you play, is a new **randomly selected word** from a list of **thousands**.
 
 So, **after every game** you play, just click '**Play Again**', or **refresh the page** to play again! 
-### 5, 6, and 7 letter words
+### :information_source: 5, 6, and 7 letter words
 
 The classic Wordle game functions off guessing a **5 letter word**, but wouldn't it be fun for a **change** to play **different sized words**?
 
@@ -36,6 +43,27 @@ This is a fun twist on the original Wordle game, allowing you to **challenge you
 Simply click on the **settings icon**, and **select a different option**. If you are **currently in a game** and want to switch options, you can still do so by clicking on the settings icon, selecting a different option, and **confirm** you want to switch. This page will **refresh** into the a **new game** with the new letter count.
 
 :warning: For whichever **option** you play, you still ***ONLY*** have a **maximum of 6 guesses** to **correctly guess** the    word.
+###  :art: Wordle Colors
+
+The classis Wordle game **colors cannot change**, but why not? Why not have some **fun** and **creativity** to **change the colors** to how you would like to play!
+
+In **my clone**, you will be able to change the colors of the **correct**, **incorrect**, and **in-word** colors! You will also be able to **[reset the colors](#resetting-colors)** to the **default** game **colors**.
+
+To **change these colors**, click on the **settings icon**, and you will see a 'Colors' section, with the different guess colors to change. Simply click on the color associated with the guess type, and use the color picker to change colors. Once you have decided on a new color, click save to change the color in the game.
+
+The **default color** for a '**Correct Guess**' in my clone is :green_apple: **green**.
+The **default color** for a '**In-Word Guess**' in my clone is :yellow_heart: **yellow**.
+The **default color** for a '**Incorrect Guess**' in my clone is :grey_exclamation: **grey**.
+
+#### Resetting colors
+
+The benefit with being able to change the colors, is you can also **reset** them if you don't like the **color** you chose! 
+
+To **reset** the guess type **colors** to their **default colors**, click on the **settings icon**, and click the '**Reset Colors**' button. The game will ask you to **confirm** if you want to **reset** the colors, as the game will obviously not anymore save the colors you chose. 
+
+Click '**yes**' if you want to **reset the colors**, and just like that, the change is **immediate**!
+
+Click '**no**' if you **don't want to reset the colors** at the given time.
 
 
 
@@ -83,18 +111,9 @@ git clone https://github.com/BraedenGiasson/BraedensCountryGuesser.github.io.git
 ```
 npm install
 ```
-or
-```
-yarn install
-```
-
 #### Start the development server
 ```
-npm start
-```
-or
-```
-yarn start
+npm run dev
 ```
 
 
