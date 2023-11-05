@@ -47,7 +47,7 @@ Simply click on the **settings icon**, and **select a different option**. If you
 
 The classis Wordle game **colors cannot change**, but why not? Why not have some **fun** and **creativity** to **change the colors** to how you would like to play!
 
-In **my clone**, you will be able to change the colors of the **correct**, **incorrect**, and **in-word** colors! You will also be able to :recycle: **[reset the colors](#resetting-colors)** to the **default** game **colors**.
+In **my clone**, you will be able to change the colors of the **correct**, **incorrect**, and **in-word** colors! You will also be able to :recycle: **[reset the colors](#recycle-resetting-colors)** to the **default** game **colors**.
 
 To **change these colors**, click on the **settings icon**, and you will see a 'Colors' section, with the different guess colors to change. Simply click on the color associated with the guess type, and use the color picker to change colors. Once you have decided on a new color, click save to change the color in the game.
 
