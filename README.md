@@ -6,7 +6,7 @@
 - **:twisted_rightwards_arrows: [Wordle Variations](#twisted_rightwards_arrows-wordle-variations)**
   - **:dizzy: [Infinite games](#dizzy-infinite-games)**
 
-  - **:information_source: [5, 6, and 7 letter words](#information_source-5,-6,-and-7-letter-words)**
+  - **:information_source: [5, 6, and 7 letter words](#information_source-5-6-and-7-letter-words)**
 
   - **:art: [Wordle colors](#art-wordle-colors)**
 
@@ -52,7 +52,9 @@ In **my clone**, you will be able to change the colors of the **correct**, **inc
 To **change these colors**, click on the **settings icon**, and you will see a 'Colors' section, with the different guess colors to change. Simply click on the color associated with the guess type, and use the color picker to change colors. Once you have decided on a new color, click save to change the color in the game.
 
 The **default color** for a '**Correct Guess**' in my clone is :green_apple: **green**.
+
 The **default color** for a '**In-Word Guess**' in my clone is :yellow_heart: **yellow**.
+
 The **default color** for a '**Incorrect Guess**' in my clone is :grey_exclamation: **grey**.
 
 #### Resetting colors
