@@ -70,7 +70,7 @@ Click '**no**' if you **don't want to reset the colors** at the given time.
 
 ## :earth_americas: How to Play
 
-
+:warning: **Coming soon!**
 
 ## :dart: Getting Started 
 
